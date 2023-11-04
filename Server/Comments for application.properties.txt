@@ -1,0 +1,12 @@
+## Configurer les infos du database et sa connection
+spring.datasource.url=jdbc:mysql://localhost:3306/employee_management_system?useSSL=false
+spring.datasource.username=root
+spring.datasource.password=
+
+
+## Configurer les infos de Hibernate dans la 1ere ligne on specifie à Hibernate son dialect çàd on indique à lui qu'on est en train d'utiliser une base de données de type MYSQL pour qu'il puisse formuler les requettes et les transformer pour les comprendre et dans la 2eme ligne La valeur update pour cette propriété indique à Hibernate de mettre à jour automatiquement le schéma de la base de données en fonction des entités JPA détectées dans l'application. Cela signifie qu'au démarrage de l'application, Hibernate comparera la structure de la base de données avec la structure attendue des entités JPA et apportera les modifications nécessaires pour qu'elles correspondent
+## Ici fach bghit nkhedem l'app mabghatch tkhdem kigoul lia bli Hibernate ma9derch i9ra ou i3ref dialect dyalo donc la solution c'est d'eliminer les dex lignes suivantes car f les versions lekhrin dyal Spring Boot had l'operation se fait automatiquement çàd Spring Boot ki2affecter dialect l Hibernate
+## la deuxieme solution c'est de changer la version du dialecte "org.hibernate.dialect.MySQLDialect"
+
+spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQLDialect
+spring.jpa.hibernate.ddl-auto=update
